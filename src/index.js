@@ -1,1 +1,5 @@
-console.log('Hello ever');
+const a = (message) => {
+    console.log(message);
+};
+
+a('Hello');
