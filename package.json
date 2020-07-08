@@ -1,10 +1,13 @@
 {
   "name": "schrello2",
   "version": "0.1.0",
+  "description": "",
+  "author": "Aliaksei Shautsou <shautsou@gmail.com>",
+  "license": "MIT",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "mocha --require @babel/register 'src/**/**spec.js'",
     "lint": "eslint ./src"
   },
@@ -23,7 +26,10 @@
     "lint-staged": "^10.2.11",
     "mocha": "^8.0.1",
     "nodemon": "^2.0.4",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "dotenv": "^8.2.0"
