@@ -3,10 +3,12 @@ version: '3'
 services:
   react:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./frontend
+      dockerfile: ./Dockerfile
     ports:
       - 4680:8080
     volumes:
-      - .:/usr/src/app
+      - ./frontend/src:/usr/src/app/src
+      - ./frontend/public:/usr/src/app/public
+      - ./frontend/node_modules:/usr/src/app/node_modules
     working_dir: /usr/src/app

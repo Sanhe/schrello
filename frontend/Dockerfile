@@ -2,6 +2,25 @@
 # a custom Docker Image with this Dockerfile
 FROM node:current-alpine
 
+#RUN apk add --update \
+#    && apk add --no-cache \
+#    build-base \
+#    gcc \
+#    autoconf \
+#    automake \
+#    g++ \
+#    libtool \
+#    mesa-gl \
+#    libxi \
+#    zlib-dev \
+#    libc6-compat \
+#    gcompat \
+#    musl \
+#    libjpeg-turbo-dev \
+#    libpng-dev \
+#    make \
+#    nasm
+
 # A directory within the virtualized Docker environment
 # Becomes more relevant when using Docker Compose later
 WORKDIR /usr/src/app
@@ -11,12 +30,14 @@ ENV PATH ./node_modules/.bin:$PATH
 
 # Copies package.json and package-lock.json to Docker environment
 COPY package*.json ./
+COPY webpack.config.js ./
+COPY .babelrc ./
 
 # Installs all node packages
-RUN npm install --silent
+#RUN npm install --silent
 
 ## Copies everything over to Docker environment
-COPY ./ ./
+#COPY ./ ./
 
 # Uses port which is used by the actual application
 EXPOSE 8080

@@ -1,0 +1,20 @@
+{
+    "board": {
+        "columns": [
+            {
+                "columnId": 1,
+                "title": "Default column",
+                "cards": [
+                    {
+                        "cardId": 1,
+                        "title": "Default card"
+                    }
+                ]
+            },
+            {
+                "columnId": 2,
+                "title": "Second column"
+            }
+        ]
+    }
+}
