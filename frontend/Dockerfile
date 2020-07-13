@@ -30,8 +30,6 @@ WORKDIR /usr/src/app
 
 # Copies package.json and package-lock.json to Docker environment
 COPY package*.json ./
-#COPY webpack.config.js ./
-#COPY .babelrc ./
 
 # Installs all node packages
 #RUN npm install --silent
