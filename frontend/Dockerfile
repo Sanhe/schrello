@@ -26,18 +26,18 @@ FROM node:current-alpine
 WORKDIR /usr/src/app
 
 # Add node_modules/.bin to $PATH
-ENV PATH ./node_modules/.bin:$PATH
+#ENV PATH ./node_modules/.bin:$PATH
 
 # Copies package.json and package-lock.json to Docker environment
 COPY package*.json ./
-COPY webpack.config.js ./
-COPY .babelrc ./
+#COPY webpack.config.js ./
+#COPY .babelrc ./
 
 # Installs all node packages
 #RUN npm install --silent
 
 ## Copies everything over to Docker environment
-#COPY ./ ./
+COPY . .
 
 # Uses port which is used by the actual application
 EXPOSE 8080
